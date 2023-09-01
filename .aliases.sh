@@ -21,3 +21,8 @@ function deitsh() {
     echo ""
   fi
 }
+
+function ipaddress() {
+
+  ipconfig getifaddr en0
+}
