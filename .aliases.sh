@@ -32,6 +32,16 @@ function dockerImagePrune() {
   docker image prune --all --force
 }
 
+function dockerSystemPrune() {
+
+  echo ""
+  echo "Running:"
+  echo "docker system prune --all --force"
+  echo ""
+
+  docker system prune --all --force
+}
+
 function editFunctions() {
 
   echo ""
@@ -70,6 +80,9 @@ function help() {
 
     echo "  dockerImagePrune            Removes all dangling docker images"
     printCommand $1 "docker image prune --all --force"
+
+    echo "  dockerSystemPrune           Removes all stopped containers, unused networks, dangling images"
+    printCommand $1 "docker system prune --all --force"
 
     echo "  editFunctions               Opens function definitions in Visual Studio Code"
     printCommand $1 "code ~/.aliases.sh"
